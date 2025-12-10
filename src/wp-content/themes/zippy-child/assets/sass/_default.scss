@@ -1,0 +1,695 @@
+#content {
+  //width
+  .width-80 {
+    max-width: 100%;
+    @include desktop {
+      max-width: 80% !important;
+    }
+  }
+
+  // Border
+  .border {
+    border: 1px solid $border-color !important;
+  }
+  .rounded {
+    border-radius: 30px !important;
+    &.col {
+      .col-inner {
+        border-radius: 30px !important;
+      }
+    }
+  }
+
+  .rounded-8 {
+    border-radius: 8px !important;
+    &.col {
+      .col-inner {
+        border-radius: 8px !important;
+      }
+    }
+  }
+
+  .rounded-14 {
+    border-radius: 14px !important;
+    img {
+      border-radius: 14px !important;
+    }
+    &.col {
+      .col-inner {
+        border-radius: 14px !important;
+      }
+    }
+  }
+  .rounded-24 {
+    border-radius: 24px !important;
+    img {
+      border-radius: 24px !important;
+    }
+    &.col {
+      .col-inner {
+        border-radius: 24px !important;
+      }
+    }
+  }
+
+  .rounded-45 {
+    border-radius: 45px !important;
+    img {
+      border-radius: 45px !important;
+    }
+    &.col {
+      .col-inner {
+        border-radius: 45px !important;
+      }
+    }
+  }
+  .rounded-60 {
+    border-radius: 60px !important;
+    > img {
+      border-radius: 60px !important;
+    }
+    &.col {
+      .col-inner {
+        border-radius: 60px !important;
+      }
+    }
+  }
+  .non-rounded {
+    border-radius: 0 !important;
+    &.col {
+      .col-inner {
+        border-radius: 0 !important;
+      }
+    }
+    img {
+      border-radius: 0 !important;
+    }
+  }
+  .border {
+    &.border-primary {
+      border: 1px solid $primary-color !important;
+    }
+    &.border-secondary {
+      border: 1px solid $secondary-color !important;
+    }
+    &.border-orange {
+      border: 1px solid $orange !important;
+    }
+    &.border-light {
+      border: 1px solid rgba($blue-light, 0.4) !important;
+    }
+    &.border-dark {
+      border: 1px solid $border-dark !important;
+    }
+    &.border-lighter-blue {
+      border: 1px solid $lighter-blue !important;
+    }
+  }
+  .border-end {
+    border-bottom: 1px solid $text-body !important;
+    padding-bottom: 20px;
+    @include desktop {
+      border-right: 1px solid $text-body !important;
+      border-bottom: none !important;
+    }
+    @include tablet {
+      border-right: 1px solid $text-body !important;
+      border-bottom: none !important;
+    }
+  }
+  .border-start {
+    border-top: 1px solid $text-body !important;
+    padding-top: 20px;
+    @include desktop {
+      border-left: 1px solid $text-body !important;
+      border-top: none !important;
+    }
+    @include tablet {
+      border-left: 1px solid $text-body !important;
+      border-top: none !important;
+    }
+  }
+
+  //
+  .opacity-0-8 {
+    opacity: 0.8 !important;
+  }
+
+  //text-margin
+  .text-margin-0 {
+    margin: 0 !important;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin: 0 !important;
+    }
+    p {
+      margin: 0 !important;
+    }
+    strong {
+      margin: 0 !important;
+    }
+  }
+
+  .text-mb-8 {
+    margin-bottom: 8px !important;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-bottom: 8px !important;
+    }
+    p {
+      margin-bottom: 8px !important;
+    }
+  }
+  //text-color
+  .text-primary {
+    color: $primary-color !important;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: $primary-color !important;
+    }
+    p {
+      color: $primary-color !important;
+    }
+  }
+
+  .text-secondary {
+    color: $secondary-color !important;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: $secondary-color !important;
+    }
+    p {
+      color: $secondary-color !important;
+    }
+  }
+  .text-blue-dark {
+    color: $blue-dark !important;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: $blue-dark !important;
+    }
+    p {
+      color: $blue-dark !important;
+    }
+  }
+
+  .text-white {
+    color: white !important;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: white !important;
+    }
+    p {
+      color: white !important;
+    }
+  }
+
+  .text-light-blue {
+    color: $blue-light !important;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: $blue-light !important;
+    }
+    p {
+      color: $blue-light !important;
+    }
+  }
+
+  .text-lighter-blue {
+    color: $lighter-blue !important;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: $lighter-blue !important;
+    }
+    p {
+      color: $lighter-blue !important;
+    }
+  }
+
+  .text-orange-secondary {
+    color: $orange-secondary !important;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: $orange-secondary !important;
+    }
+    p {
+      color: $orange-secondary !important;
+    }
+  }
+
+  .text-gradient-primary {
+    background: $gradient-secondary;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      background: $gradient-secondary;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    p {
+      background: $gradient-secondary;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+  .text-gray {
+    color: $text-body !important;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: $text-body !important;
+    }
+    p {
+      color: $text-body !important;
+    }
+  }
+  .text-black {
+    color: #000 !important;
+    p {
+      color: #000 !important;
+    }
+  }
+  .span-primary {
+    span {
+      color: $primary-color !important;
+      font-size: 20px;
+    }
+  }
+  //
+  //Font
+  .lh-small {
+    line-height: 1.25;
+    p {
+      line-height: 1.25;
+    }
+    span {
+      line-height: 1.25;
+    }
+  }
+  .fw-400 {
+    font-weight: 400 !important;
+    p {
+      font-weight: 400 !important;
+    }
+    span {
+      font-weight: 400 !important;
+    }
+  }
+  .fw-500 {
+    font-weight: 500 !important;
+    p {
+      font-weight: 500 !important;
+    }
+  }
+  .fw-bold {
+    font-weight: bold !important;
+    p {
+      font-weight: bold !important;
+    }
+  }
+  .fs-44 {
+    font-size: 26px !important;
+    p {
+      font-size: 26px !important;
+    }
+    @include desktop {
+      font-size: 44px !important;
+      p {
+        font-size: 44px !important;
+      }
+    }
+  }
+  .fs-30 {
+    @include desktop {
+      font-size: 30px !important;
+      p {
+        font-size: 30px !important;
+      }
+      span {
+        font-size: 30px !important;
+      }
+    }
+    font-size: 22px;
+    p {
+      font-size: 22px;
+    }
+    span {
+      font-size: 22px;
+    }
+  }
+  .fs-26 {
+    @include desktop {
+      font-size: 26px !important;
+      p {
+        font-size: 26px !important;
+      }
+      span {
+        font-size: 26px !important;
+      }
+    }
+    font-size: 20px;
+    p {
+      font-size: 20px;
+    }
+    span {
+      font-size: 20px;
+    }
+  }
+  .fs-24 {
+    @include desktop {
+      font-size: 24px !important;
+      p {
+        font-size: 24px !important;
+      }
+    }
+    font-size: 18px !important;
+    p {
+      font-size: 18px !important;
+    }
+  }
+  .fs-22 {
+    @include desktop {
+      font-size: 22px !important;
+      p {
+        font-size: 22px !important;
+      }
+    }
+    font-size: 20px;
+    p {
+      font-size: 20px;
+    }
+  }
+  .fs-20 {
+    @include desktop {
+      font-size: 20px !important;
+      p {
+        font-size: 20px !important;
+      }
+    }
+    font-size: 18px;
+    p {
+      font-size: 18px;
+    }
+  }
+  .fs-18 {
+    @include desktop {
+      font-size: 18px !important;
+      p {
+        font-size: 18px !important;
+      }
+    }
+    font-size: 16px;
+    p {
+      font-size: 16px;
+    }
+  }
+  .fs-16 {
+    @include desktop {
+      font-size: 16px !important;
+      p {
+        font-size: 16px !important;
+      }
+    }
+    font-size: 14px;
+    p {
+      font-size: 14px;
+    }
+  }
+  .fs-14 {
+    font-size: 14px !important;
+    p {
+      font-size: 14px !important;
+    }
+  }
+  .h-fs-32 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-size: 26px !important;
+    }
+    @include desktop {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-size: 32px !important;
+      }
+    }
+  }
+  //
+  // Background
+  .bg-primary {
+    background-color: $primary-color !important;
+    p {
+      background-color: $primary-color !important;
+    }
+  }
+  .bg-primary-light {
+    --tw-gradient-from: #f0fdf4 !important;
+    --tw-gradient-to: #eff6ff !important;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+    background-image: linear-gradient(
+      to bottom right,
+      var(--tw-gradient-stops)
+    );
+  }
+  .bg-yelow-light {
+    --tw-gradient-from: #fff7ed !important;
+    --tw-gradient-to: #fef2f2 !important;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+    background-image: linear-gradient(
+      to bottom right,
+      var(--tw-gradient-stops)
+    );
+  }
+
+  .bg-secondary {
+    background-color: $secondary-color !important;
+    p {
+      background-color: $secondary-color !important;
+    }
+  }
+  .bg-white {
+    background-color: white !important;
+    p {
+      background-color: white !important;
+    }
+    &.col {
+      .col-inner {
+        background-color: white !important;
+      }
+    }
+  }
+  .bg-light-blur {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+  }
+  .bg-lighter-blue {
+    background-color: $lighter-blue !important;
+  }
+  .bg-purple {
+    background: $gradient-green !important;
+  }
+  .bg-gra-purple {
+    background: $gradient-purple !important;
+  }
+  .bg-gra-secondary {
+    background: $gradient-secondary !important;
+  }
+  .bg-gra-green-re {
+    background: $gradient-green-reverse !important;
+  }
+  .bg-smoke {
+    background-color: $smoke !important;
+  }
+  .bg-light-gray {
+    background-color: $light-gray !important;
+  }
+  //shadow
+  .shadow {
+    box-shadow: $shadow !important;
+  }
+  // Position
+  .position-relative {
+    position: relative !important;
+  }
+  .position-absolute {
+    position: absolute !important;
+  }
+  //Flex
+  .d-flex {
+    display: flex !important;
+  }
+  .d-flex-inner {
+    .col-inner {
+      display: flex !important;
+    }
+  }
+  .f-col {
+    flex-direction: column !important;
+  }
+  .f-col-inner {
+    .col-inner {
+      flex-direction: column !important;
+    }
+  }
+  .f-row {
+    flex-direction: row !important;
+  }
+  .f-row-inner {
+    .col-inner {
+      flex-direction: row !important;
+    }
+  }
+  .f-nowrap {
+    flex-wrap: nowrap !important;
+  }
+  .d-block {
+    display: block !important;
+  }
+  .d-none {
+    display: none !important;
+  }
+  .justify-content-center {
+    justify-content: center !important;
+  }
+  .justify-content-between {
+    justify-content: space-between !important;
+  }
+  .align-items-center {
+    align-items: center !important;
+  }
+  .align-center-inner {
+    .col-inner {
+      align-items: center !important;
+    }
+  }
+  //width
+  .w-60 {
+    width: 60% !important;
+  }
+  .w-70 {
+    width: 70% !important;
+  }
+  .w-80 {
+    width: 80% !important;
+  }
+  .w-100 {
+    width: 100% !important;
+  }
+  .w-auto {
+    width: auto !important;
+  }
+  //z-index
+  .z-1 {
+    z-index: 9 !important;
+  }
+  .z-2 {
+    z-index: 99 !important;
+  }
+  .z-3 {
+    z-index: 999 !important;
+  }
+  .z-4 {
+    z-index: 9999 !important;
+  }
+  .z-5 {
+    z-index: 99999 !important;
+  }
+
+  //height
+  .h-300px {
+    @include desktop {
+      height: 300px !important;
+    }
+  }
+  .h-310px {
+    @include desktop {
+      height: 310px !important;
+    }
+  }
+  .h-260px {
+    @include desktop {
+      height: 260px !important;
+    }
+  }
+
+  //tag-line
+  .tag-line {
+    width: fit-content;
+    padding: 8px 12px;
+    border: 1px solid $border-color;
+    border-radius: 24px;
+    p {
+      margin: 0;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 1.2em;
+      color: $blue-dark;
+    }
+  }
+  .tag-line-title {
+    width: fit-content;
+    padding: 10px 15px;
+    border-radius: 24px;
+    background-color: $border-color;
+    p {
+      margin: 0;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1;
+      color: $blue-dark;
+    }
+  }
+}

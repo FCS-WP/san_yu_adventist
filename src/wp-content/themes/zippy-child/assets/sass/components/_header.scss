@@ -1,0 +1,27 @@
+.header-wrapper {
+  li.menu-item a {
+    color: $text-body;
+    &:hover {
+      color: $primary-color !important;
+    }
+  }
+  li.active a {
+    color: $primary-color !important;
+  }
+  .header-nav-main {
+    > li.menu-item {
+      padding-inline: 30px;
+      > a {
+        color: $text-body;
+        font-size: 18px;
+        font-weight: 500;
+      }
+    }
+
+    .icon-shopping-cart {
+      font-size: 24px;
+      color: $primary-color;
+      
+    }
+  }
+}
