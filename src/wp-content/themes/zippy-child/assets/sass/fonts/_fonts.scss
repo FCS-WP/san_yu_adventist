@@ -55,6 +55,7 @@ body #wrapper {
   h1 {
     font-size: 28px !important;
     line-height: 1.2em;
+    color: $primary-color !important;
 
     @include tablet {
       font-size: 38px !important;
@@ -77,6 +78,7 @@ body #wrapper {
   h2 {
     font-size: 24px !important;
     line-height: 1.2em;
+    color: $primary-color !important;
 
     @include tablet {
       font-size: 32px !important;
@@ -98,6 +100,7 @@ body #wrapper {
 
   h3 {
     font-size: 18px !important;
+    color: $primary-color !important;
     @include desktop {
       font-size: 22px !important;
     }
