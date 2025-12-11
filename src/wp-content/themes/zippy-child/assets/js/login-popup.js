@@ -1,55 +1,25 @@
-document.addEventListener("DOMContentLoaded", function () {
+jQuery(document).ready(function ($) {
+  $("#student-login-form").on("submit", function (e) {
+    e.preventDefault();
 
-    // Hàm đợi #student-login-form xuất hiện (vì popup render sau)
-    function waitForForm(callback) {
-        const check = setInterval(() => {
-            const form = document.querySelector("#student-login-form");
-            if (form) {
-                clearInterval(check);
-                callback(form);
-            }
-        }, 200);
-    }
+    var data = {
+      action: "student_login",
+      student_name: $("input[name='student_name']").val(),
+      level: $("select[name='level']").val(),
+      student_id: $("input[name='student_id']").val(),
+    };
+    var ajaxurl = "/wp-admin/admin-ajax.php";
 
-    waitForForm(function (form) {
-
-        console.log("Student login form FOUND:", form);
-
-        const msg = document.querySelector(".student-login-message");
-
-        form.addEventListener("submit", function (e) {
-            e.preventDefault();
-
-            const formData = new FormData(form);
-            formData.append("action", "student_login");
-            formData.append("nonce", studentLogin.nonce);
-
-            console.log("AJAX URL:", studentLogin.ajax_url);
-            console.log("Sending data:", Object.fromEntries(formData));
-
-            fetch(studentLogin.ajax_url, {
-                method: "POST",
-                body: formData
-            })
-            .then(res => res.json())
-            .then(response => {
-
-                console.log("AJAX RESPONSE:", response);
-
-                if (response.success) {
-                    msg.innerHTML = `<div class="success">Login thành công! Redirect...</div>`;
-                    setTimeout(() => {
-                        window.location.href = response.data.redirect;
-                    }, 800);
-                } else {
-                    msg.innerHTML = `<div class="error">${response.data.message}</div>`;
-                }
-
-            })
-            .catch(err => {
-                console.error("AJAX ERROR:", err);
-                msg.innerHTML = `<div class="error">Có lỗi xảy ra, vui lòng thử lại.</div>`;
-            });
-        });
+    $.post(ajaxurl, data, function (response) {
+      if (response.success) {
+        $(".student-login-message")
+          .css("color", "green")
+          .text(response.data.message);
+      } else {
+        $(".student-login-message")
+          .css("color", "red")
+          .text(response.data.message);
+      }
     });
+  });
 });
