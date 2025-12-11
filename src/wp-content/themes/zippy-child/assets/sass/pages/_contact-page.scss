@@ -1,0 +1,31 @@
+.contact-box {
+  .col {
+    .col-inner {
+      height: 100%;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+      padding: 20px;
+      p {
+        margin-bottom: 0;
+      }
+    }
+    padding-inline: 0;
+  }
+  @include tablet {
+    .col {
+        padding-inline: 20px;
+    }
+  }
+}
+
+// google-map
+@media (max-width: 1024px) {
+  .google-map-sec {
+    height: 400px !important;
+  }
+}
+@media (max-width: 768px) {
+  .google-map-sec {
+    width: 100% !important;
+    height: 300px !important;
+  }
+}

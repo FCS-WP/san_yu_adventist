@@ -1,16 +1,108 @@
+@import "../variables";
 
 
 /* Font face for web template */
-@include font-face("Open Sans", "#{$assets_path}fonts/Arial/SVN-Arial-Regular", 500);
-@include font-face("Open Sans", "#{$assets_path}fonts/Arial/SVN-Arial-Bold", 900);
-@include font-face("Open Sans", "#{$assets_path}fonts/Arial/SVN-Arial-Italic", 500);
-@include font-face("Open Sans", "#{$assets_path}fonts/Arial/SVN-Arial-Bold-Italic", 900);
-html * {
-  // background: url(../../img/background.jpg);
-  background-size: cover;
-  font-family: 'Open Sans', serif !important;
-  // font-weight: 400;
+// @include font-face("Arial", "#{$assets_path}fonts/Arial/SVN-Arial-Regular", 500);
+// @include font-face("Arial", "#{$assets_path}fonts/Arial/SVN-Arial-Bold", 900);
+// @include font-face("Arial", "#{$assets_path}fonts/Arial/SVN-Arial-Italic", 500);
+// @include font-face("Arial", "#{$assets_path}fonts/Arial/SVN-Arial-Bold-Italic", 900);
+@include font-face("Arial", "#{$assets_path}fonts/Arial/ARIAL", 400);
+@include font-face("Arial", "#{$assets_path}fonts/Arial/ARIALBD", 900);
+/* Font face for web template */
+// Montserrat
+@include font-face(
+  "Montserrat",
+  "#{$assets_path}fonts/Montserrat/Montserrat-Regular",
+  400
+);
+@include font-face(
+  "Montserrat",
+  "#{$assets_path}fonts/Montserrat/Montserrat-Light",
+  300
+);
+@include font-face(
+  "Montserrat",
+  "#{$assets_path}fonts/Montserrat/Montserrat-Medium",
+  500
+);
+@include font-face(
+  "Montserrat",
+  "#{$assets_path}fonts/Montserrat/Montserrat-Bold",
+  900
+);
+
+body #main-menu,
+body #wrapper {
+  h1, h2, h3, h4, h5, h6, a, span, nav {
+    font-family: $main-font;
+  }
 }
-// body {
-//   font-family: "Arial", serif !important;
-// }
+#main {
+  p {
+    font-family: $second-font;
+    font-size: 16px;
+    color: $text-body;
+  }
+  a {
+    font-family: $second-font;
+    color: $primary-color;
+    font-size: 16px;
+  }
+  div {
+    font-family: $second-font;
+    font-size: 16px;
+  }
+  h1 {
+    font-size: 28px !important;
+    line-height: 1.2em;
+    color: $primary-color !important;
+
+    @include tablet {
+      font-size: 32px !important;
+    }
+    @include desktop {
+      font-size: 46px !important;
+    }
+    span {
+      font-size: 28px !important;
+      font-family: $second-font !important;
+      @include tablet {
+        font-size: 38px !important;
+      }
+      @include desktop {
+        font-size: 48px !important;
+      }
+    }
+  }
+
+  h2 {
+    font-size: 24px !important;
+    line-height: 1.2em;
+    color: $primary-color !important;
+
+    @include tablet {
+      font-size: 32px !important;
+    }
+    @include desktop {
+      font-size: 40px !important;
+    }
+    span {
+      font-size: 24px !important;
+      font-family: $second-font !important;
+      @include tablet {
+        font-size: 32px !important;
+      }
+      @include desktop {
+        font-size: 40px !important;
+      }
+    }
+  }
+
+  h3 {
+    font-size: 18px !important;
+    color: $primary-color !important;
+    @include desktop {
+      font-size: 22px !important;
+    }
+  }
+}

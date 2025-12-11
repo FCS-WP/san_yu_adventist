@@ -1,21 +1,18 @@
-// // @import './fonts/fonts';
+@import "fonts/fonts";
 
-// body {
-//   // display: none !important;
-//   text-align: center;
-//   padding: 0;
-//   margin: 0;
-//   height: 100vh;
-//   // display: flex;
-//   flex-flow: column;
-//   justify-content: center;
-//   align-items: center;
-// }
-// .entry-summary{
-//   background: url(../icons/mics.png);
-// }
-// // footer {
-// //   position: fixed;
-// //   bottom: 0px;
-// //   color: white;
-// // }
+// defualt
+@import "mixins";
+@import "variables";
+@import "default";
+
+// components
+@import "components/buttons";
+@import "components/spacing";
+@import "components/header";
+@import "components/footer";
+@import "components/login-popup";
+
+// pages
+@import "pages/homepage";
+@import "pages/shop";
+@import "pages/contact-page";
