@@ -1,0 +1,25 @@
+.login-popup {
+  .student-login-wrapper {
+    #student-login-form {
+      margin-bottom: 0;
+      .submit {
+        margin-top: 20px;
+        width: 100%;
+        text-align: center;
+        button {
+          width: 50%;
+          margin: 0;
+          color: #fff;
+          text-transform: capitalize;
+        }
+      }
+    }
+    @include tablet {
+      .submit {
+        button {
+          width: 30%;
+        }
+      }
+    }
+  }
+}

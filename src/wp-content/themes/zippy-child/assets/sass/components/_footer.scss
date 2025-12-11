@@ -2,6 +2,9 @@
   .absolute-footer {
     display: none;
   }
+  .back-to-top {
+    color: #fff;
+  }
   .footer-1 {
     .widget {
       margin-bottom: 0;
@@ -16,6 +19,12 @@
     #text-7 .footer-mb-title-hidden {
       display: none;
     }
+    .dark {
+      .footer-mb-title-hidden {
+        margin-bottom: .7em ;
+      }
+    }
+
     @include tablet {
       #text-4,
       #text-5,
