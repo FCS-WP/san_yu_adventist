@@ -1,4 +1,10 @@
 <?php
+function lightbox_login_form()
+{
+  echo do_shortcode('[lightbox auto_open="true" auto_timer="2000" auto_show="always" width="500px" padding="20px"][block id="login-popup"][/lightbox]');
+}
+
+add_shortcode('lightbox_login_form', 'lightbox_login_form');
 
 function popup_login_shortcode()
 {

@@ -1,6 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-
-    // Hàm đợi #student-login-form xuất hiện (vì popup render sau)
     function waitForForm(callback) {
         const check = setInterval(() => {
             const form = document.querySelector("#student-login-form");

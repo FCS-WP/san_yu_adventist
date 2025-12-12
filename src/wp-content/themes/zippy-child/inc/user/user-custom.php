@@ -14,13 +14,6 @@ function add_student_custom_fields($user) {
             $exclude_ids[] = $term->term_id;
         }
     }
-
-    $categories = get_terms([
-        'taxonomy'   => 'product_cat',
-        'hide_empty' => false,
-        'parent'     => 0,
-        'exclude'    => $exclude_ids,
-    ]);
     ?>
     
     <h3>Student Information</h3>
