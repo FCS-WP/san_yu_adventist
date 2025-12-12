@@ -1,5 +1,5 @@
 jQuery(document).ready(function ($) {
- const $form = $("#student-login-form");
+  const $form = $("#student-login-form");
   const $message = $(".student-login-message");
   const ajaxurl = "/wp-admin/admin-ajax.php";
 
@@ -31,9 +31,6 @@ jQuery(document).ready(function ($) {
   });
 
   // Login button action
-  $("a.nav-top-not-logged-in").on("click", function (e) {
-    e.preventDefault();
-    $(this).attr("data-open", "#custom-login-form-popup");
-  });
 
+  $("a.nav-top-not-logged-in").attr("data-open", "#custom-login-form-popup");
 });
