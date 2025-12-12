@@ -1,5 +1,7 @@
 jQuery(document).ready(function ($) {
   $("#student-login-form").on("submit", function (e) {
+    console.log('loginnnnnnnn');
+    
     e.preventDefault();
 
     var data = {
@@ -15,6 +17,9 @@ jQuery(document).ready(function ($) {
         $(".student-login-message")
           .css("color", "green")
           .text(response.data.message);
+        setTimeout(function () {
+          window.location.replace("/lesson-shop");
+        }, 1000);
       } else {
         $(".student-login-message")
           .css("color", "red")
@@ -22,4 +27,25 @@ jQuery(document).ready(function ($) {
       }
     });
   });
+});
+
+
+
+// Login button
+jQuery(function($){
+    var $loginLink = $('a.nav-top-not-logged-in');
+    $loginLink.removeAttr('data-open');
+
+    console.log($('#my-login-popup.lightbox-content').length);
+    
+    $(document).on('click', 'a.nav-top-not-logged-in', function(e) {
+      if (typeof $.fn.magnificPopup === 'function') {
+        $.magnificPopup.open({
+            items: {
+                src: '#my-login-popup',
+                type: 'inline'
+            }
+        });
+      }
+    });
 });

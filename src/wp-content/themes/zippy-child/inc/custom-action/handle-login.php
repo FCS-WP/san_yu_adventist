@@ -71,19 +71,24 @@ function handle_student_login()
     $user_level_term    = get_term($user_level_term_id, 'product_cat');
     $user_level_slug    = $user_level_term ? $user_level_term->slug : '';
 
-    if ($user_level_slug !== $input_level) {
-        wp_send_json_error(['message' => 'Incorrect level']);
-        wp_die();
-    }
+    // if ($user_level_slug !== $input_level) {
+    //     wp_send_json_error(['message' => 'Incorrect level']);
+    //     wp_die();
+    // }
 
     // All checks passed → Login user
 
     wp_set_current_user($user->ID);
     wp_set_auth_cookie($user->ID, true);
 
+    // Save selected level into cookie
+    setcookie('selected_level', $input_level, time() + 3600, "/");
+
+
     wp_send_json_success([
         'message' => 'Login successful',
-        'user'    => $user->user_login
+        'user'    => $user->user_login,
+        'level'   => $user_level_slug
     ]);
 
     wp_die();
