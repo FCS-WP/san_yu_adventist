@@ -11,8 +11,15 @@ function lesson_shop_shortcode()
     $level_term_id = get_user_meta($user_id, 'student_level', true);
     $level_term = get_term($level_term_id, 'product_cat');
 
-    if (!$level_term) {
-        return '<p>No level assigned. Please contact administrator.</p>';
+    $level_slug = isset($_COOKIE['selected_level']) ? sanitize_text_field($_COOKIE['selected_level']) : '';
+
+    if (!$level_slug) {
+        if ($level_term) {
+            $level_slug = $level_term->slug;
+        }
+        else {
+            return '<p>No level assigned. Please contact administrator.</p>';
+        }
     }
 
     $args = [
@@ -25,7 +32,7 @@ function lesson_shop_shortcode()
             [
                 'taxonomy' => 'product_cat',
                 'field'    => 'slug',
-                'terms'    => $level_term->slug,
+                'terms'    => $level_slug,
             ]
         ]
     ];
@@ -37,7 +44,7 @@ function lesson_shop_shortcode()
 
     <div id="lesson-shop-wrapper">
 
-        <h2 class="booklist-title text-center mb-lg-2 mb-1"><?php echo esc_html($level_term->name); ?> Booklist</h2>
+        <h2 class="booklist-title text-center mb-lg-2 mb-1"><?php echo esc_html($level_slug->name); ?> Booklist</h2>
 
         <table class="booklist-table">
             <thead>

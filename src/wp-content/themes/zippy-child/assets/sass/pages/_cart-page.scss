@@ -1,0 +1,24 @@
+.page {
+  .checkout-breadcrumbs a {
+    text-transform: capitalize !important;
+  }
+  .page-checkout {
+    padding-bottom: 60px;
+    padding-top: 40px;
+    h3,
+    .button {
+      text-transform: capitalize !important;
+    }
+    .cart-collaterals {
+      .checkout-button {
+        background-color: $secondary-color;
+      }
+      .coupon {
+        .button {
+          color: #fff;
+          text-shadow: none;
+        }
+      }
+    }
+  }
+}
