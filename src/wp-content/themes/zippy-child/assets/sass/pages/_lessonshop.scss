@@ -1,54 +1,59 @@
-.booklist-table {
-  width: 100%;
-  border-collapse: collapse;
-  table-layout: fixed;
-  margin-top: 20px;
-  text-align: center;
+#lesson-shop-wrapper {
+  padding-top: 20px;
+  padding-bottom: 0;
+  .booklist-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    margin-top: 20px;
+    text-align: center;
 
-  tbody {
-    tr {
-      &:nth-child(even) {
-        background-color: #f5f5f5;
+    tbody {
+      tr {
+        background-color: $text-bg-1;
+        border-bottom: 5px solid #fff;
+      }
+    }
+
+    th,
+    td {
+      padding: 20px 10px !important;
+      text-align: left;
+      vertical-align: middle;
+      border: 0 !important;
+      color: #000;
+    }
+
+    th {
+      font-weight: 700;
+      font-size: 14px;
+      text-transform: uppercase;
+      background-color: #133b7a;
+      color: white;
+      text-transform: capitalize;
+      line-height: 2em;
+      &:first-child {
+        border-radius: 15px 0 0 0;
       }
       &:last-child {
-        td {
-          &:first-child {
-            border-radius: 0 0 0 15px;
-          }
-          &:last-child {
-            border-radius: 0 0 15px 0;
-          }
-        }
+        border-radius: 0 15px 0 0;
+      }
+    }
+
+    td {
+      &.quantity {
+        width: 100%;
+        display: table-cell;
       }
     }
   }
-
-  th,
-  td {
-    padding: 20px 25px !important;
-    text-align: left;
-    vertical-align: middle;
-    border: 0 !important;
-  }
-
-  th {
-    font-weight: 700;
-    font-size: 14px;
-    text-transform: uppercase;
-    background-color: #133b7a;
-    color: white;
-    &:first-child {
-      border-radius: 15px 0 0 0;
-    }
-    &:last-child {
-      border-radius: 0 15px 0 0;
-    }
-  }
-
-  td {
-    &.quantity {
-      width: 100%;
-      display: table-cell;
+  @include tablet {
+    padding: 20px 0;
+    .booklist-table {
+      th,
+      td {
+        padding: 20px 25px !important;
+      }
     }
   }
 }
@@ -79,7 +84,7 @@
   display: block;
   text-align: end;
   .add-all-btn {
-    margin-top: 20px;
+    margin: 0;
     background: #0e4da4;
     color: white;
     padding: 8px 15px;
@@ -97,7 +102,7 @@
 .custom-qty-wrapper {
   display: flex;
   align-items: center;
-  justify-content: center;
+
   gap: 8px;
   .custom-minus {
     margin-bottom: 0px;
@@ -105,7 +110,10 @@
     margin-right: 0px;
     color: white;
     height: 40px;
-    border-radius: 8px;
+    border-radius: 30px;
+    width: 40px;
+    padding: 0;
+    font-size: 16px;
   }
   .custom-plus {
     margin-bottom: 0px;
@@ -113,7 +121,10 @@
     margin-right: 0px;
     color: white;
     height: 40px;
-    border-radius: 8px;
+    border-radius: 30px;
+    width: 40px;
+    padding: 0;
+    font-size: 16px;
   }
   .custom-qty {
     height: 40px;

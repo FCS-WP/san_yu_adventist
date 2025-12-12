@@ -44,7 +44,7 @@ function lesson_shop_shortcode()
 
     <div id="lesson-shop-wrapper">
 
-        <h2 class="booklist-title text-center mb-lg-2 mb-1"><?php echo esc_html($level_slug->name); ?> Booklist</h2>
+        <h2 class="booklist-title text-center mb-lg-2 mb-1"><?php echo esc_html(get_term_by('slug', $level_slug, 'product_cat')->name); ?> Booklist</h2>
 
         <table class="booklist-table">
             <thead>
