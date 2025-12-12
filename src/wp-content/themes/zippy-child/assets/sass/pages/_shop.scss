@@ -1,9 +1,31 @@
 // quick view
 .quick-view {
-    color: #fff !important;
+  color: #fff !important;
 }
 
-// shoppage
+// shop page
 .shop-page-title {
-    margin-top: 40px;
+  margin-top: 40px;
+}
+
+// single product
+.single-product {
+  .product-main {
+    padding-bottom: 0;
+  }
+  .product-info.summary {
+    padding-bottom: 0;
+  }
+  .product-footer {
+    .size-chart-img {
+      padding: 20px 0;
+    }
+  }
+  @include tablet {
+    .product-footer {
+      .size-chart-img {
+        padding: 40px 0;
+      }
+    }
+  }
 }

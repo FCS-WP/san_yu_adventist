@@ -1,5 +1,9 @@
 // default
 body button {
     background-color: $primary-color !important;
+    &.mfp-close {
+        background-color: $primary-color;
+        color: #fff;
+    }
 }
 

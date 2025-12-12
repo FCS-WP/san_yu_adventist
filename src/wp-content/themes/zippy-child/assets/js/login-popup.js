@@ -1,7 +1,5 @@
 jQuery(document).ready(function ($) {
   $("#student-login-form").on("submit", function (e) {
-    console.log('loginnnnnnnn');
-    
     e.preventDefault();
 
     var data = {
