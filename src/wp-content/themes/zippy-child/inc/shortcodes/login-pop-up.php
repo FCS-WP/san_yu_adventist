@@ -1,7 +1,7 @@
 <?php
 add_action('wp_footer', function () {
     if (!is_user_logged_in()) {
-        echo do_shortcode('[lightbox id="custom-login-form-popup" auto_open="true" auto_timer="1500" width="500px"][block id="login-popup"][/lightbox]');
+        echo do_shortcode('[lightbox id="custom-login-form-popup" auto_open="true" auto_timer="5000" auto_show="always" width="500px"][block id="login-popup"][/lightbox]');
     }
 });
 add_filter('body_class', function ($classes) {
