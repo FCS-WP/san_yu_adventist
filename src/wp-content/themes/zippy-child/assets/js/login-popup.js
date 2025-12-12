@@ -1,51 +1,36 @@
 jQuery(document).ready(function ($) {
-  $("#student-login-form").on("submit", function (e) {
-    console.log('loginnnnnnnn');
-    
+  const $form = $("#student-login-form");
+  const $message = $(".student-login-message");
+  const ajaxurl = "/wp-admin/admin-ajax.php";
+
+  // Handle student login
+  $form.on("submit", function (e) {
     e.preventDefault();
 
-    var data = {
+    const data = {
       action: "student_login",
-      student_name: $("input[name='student_name']").val(),
-      level: $("select[name='level']").val(),
-      student_id: $("input[name='student_id']").val(),
+      student_name: $form.find("input[name='student_name']").val(),
+      level: $form.find("select[name='level']").val(),
+      student_id: $form.find("input[name='student_id']").val(),
     };
-    var ajaxurl = "/wp-admin/admin-ajax.php";
 
-    $.post(ajaxurl, data, function (response) {
-      if (response.success) {
-        $(".student-login-message")
-          .css("color", "green")
-          .text(response.data.message);
-        setTimeout(function () {
-          window.location.replace("/lesson-shop");
-        }, 1000);
-      } else {
-        $(".student-login-message")
-          .css("color", "red")
-          .text(response.data.message);
-      }
-    });
+    $.post(ajaxurl, data)
+      .done(function (response) {
+        const color = response.success ? "green" : "red";
+        $message.css("color", color).text(response.data.message);
+
+        if (response.success) {
+          setTimeout(() => {
+            window.location.replace("/lesson-shop");
+          }, 1000);
+        }
+      })
+      .fail(function () {
+        $message.css("color", "red").text("Something went wrong.");
+      });
   });
-});
 
+  // Login button action
 
-
-// Login button
-jQuery(function($){
-    var $loginLink = $('a.nav-top-not-logged-in');
-    $loginLink.removeAttr('data-open');
-
-    console.log($('#my-login-popup.lightbox-content').length);
-    
-    $(document).on('click', 'a.nav-top-not-logged-in', function(e) {
-      if (typeof $.fn.magnificPopup === 'function') {
-        $.magnificPopup.open({
-            items: {
-                src: '#my-login-popup',
-                type: 'inline'
-            }
-        });
-      }
-    });
+  $("a.nav-top-not-logged-in").attr("data-open", "#custom-login-form-popup");
 });
