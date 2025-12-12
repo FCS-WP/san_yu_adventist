@@ -1,19 +1,10 @@
 <?php
-add_action('init', 'lightbox_login_form');
-function lightbox_login_form()
-{
-    add_action('wp_body_open', function () {
-        if (!is_user_logged_in() && !is_account_page()) {
-            echo do_shortcode('[lightbox auto_open="true" auto_timer="2000" auto_show="always" width="500px" padding="0"][block id="login-popup"][/lightbox]');
-        }
-    });
-}
-
- add_action('wp_footer', function(){
-    if (!is_user_logged_in() && !is_account_page()) {
-        echo do_shortcode('[lightbox id="my-login-popup" auto_open="false" width="600px"][block id="login-popup"][/lightbox]');
+add_action('wp_footer', function () {
+    if (!is_user_logged_in()) {
+        echo do_shortcode('[lightbox id="custom-login-form-popup" auto_open="true" auto_timer="1500" width="500px"][block id="login-popup"][/lightbox]');
     }
 });
+
 
 function popup_login_shortcode()
 {
