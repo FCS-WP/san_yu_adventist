@@ -64,7 +64,7 @@ if (is_product_category() && $q->parent) {
 								$product = wc_get_product(get_the_ID());
 							?>
 								<tr>
-									<td><?php echo esc_html(get_the_terms(get_the_ID(), 'product_cat')[0]->name);?></td>
+									<td><?php echo esc_html(get_the_terms(get_the_ID(), 'product_tag')[0]->name);?></td>
 									<td><?php the_title(); ?></td>
 									<td><?php echo esc_html(get_the_author()); ?></td>
 									<td><?php echo wc_price($product->get_price()); ?></td>
@@ -215,7 +215,6 @@ if (is_product_category() && $q->parent) {
 						do_action('woocommerce_shop_loop');
 
 						wc_get_template_part('content', 'product');
-						// woocommerce_template_loop_add_to_cart();
 
 					}
 				}

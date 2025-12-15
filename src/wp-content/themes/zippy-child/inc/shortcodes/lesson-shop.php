@@ -43,7 +43,7 @@ function lesson_shop_shortcode()
 
     <div id="lesson-shop-wrapper">
 
-        <h2 class="booklist-title text-center mb-lg-2 mb-1"><?php echo esc_html(get_term_by('slug', $level_slug, 'product_cat')->name); ?> Booklist</h2>
+        <h2 class="booklist-title text-center mb-lg-2 mb-1"><?php echo esc_html(get_term_by('slug', $level_slug, 'product_tag')->name); ?> Booklist</h2>
 
         <table class="booklist-table">
             <thead>
@@ -62,7 +62,7 @@ function lesson_shop_shortcode()
                         $product = wc_get_product(get_the_ID());
                     ?>
                         <tr>
-                            <td><?php echo esc_html(get_the_terms(get_the_ID(), 'product_cat')[0]->name);?></td>
+                            <td><?php echo esc_html(get_the_terms(get_the_ID(), 'product_tag')[0]->name);?></td>
                             <td><?php the_title(); ?></td>
                             <td><?php echo esc_html(get_the_author()); ?></td>
                             <td><?php echo wc_price($product->get_price()); ?></td>
