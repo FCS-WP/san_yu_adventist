@@ -45,7 +45,7 @@ if (is_product_category() && $q->parent) {
 		<div class="row row-main">
 			<h2 class="lesson-shop-title">Shop</h2>
 			<div id="lesson-shop-wrapper">
-				<h2 class="booklist-title text-center mb-lg-2 mb-1"><?php echo esc_html($level_slug->name); ?> Booklist</h2>
+				<h2 class="booklist-title text-center mb-lg-2 mb-1"><?php echo esc_html($level_slug->name); ?></h2>
 
 				<table class="booklist-table">
 					<thead>
@@ -64,7 +64,7 @@ if (is_product_category() && $q->parent) {
 								$product = wc_get_product(get_the_ID());
 							?>
 								<tr>
-									<td><?php echo esc_html(get_the_terms(get_the_ID(), 'product_cat')[0]->name);?></td>
+									<td><?php echo esc_html(get_the_terms(get_the_ID(), 'product_tag')[0]->name);?></td>
 									<td><?php the_title(); ?></td>
 									<td><?php echo esc_html(get_the_author()); ?></td>
 									<td><?php echo wc_price($product->get_price()); ?></td>
@@ -106,9 +106,13 @@ if (is_product_category() && $q->parent) {
 
 	<?php
 	} else {
+	add_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10);
 	?>
+		<div class="row row-main"> 
+			<h1 class="lesson-shop-title">Shop</h1>
+		</div>
 		<div class="row category-page-row">
-
+			<h2 class="booklist-title text-center mb-lg-2 mb-1"><?php echo esc_html(get_term($q->parent)->name); ?></h2>
 			<div class="col large-3 hide-for-medium <?php flatsome_sidebar_classes(); ?>">
 				<?php flatsome_sticky_column_open('category_sticky_sidebar'); ?>
 				<div id="shop-sidebar" class="sidebar-inner col-inner">
@@ -167,9 +171,13 @@ if (is_product_category() && $q->parent) {
 	<?php
 	}
 } else {
+	add_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10);
 	?>
+	<div class="row row-main"> 
+		<h1 class="lesson-shop-title">Shop</h1>
+	</div>
 	<div class="row category-page-row">
-
+		<h2 class="booklist-title text-center mb-lg-2 mb-1">Uniforms</h2>
 		<div class="col large-3 hide-for-medium <?php flatsome_sidebar_classes(); ?>">
 			<?php flatsome_sticky_column_open('category_sticky_sidebar'); ?>
 			<div id="shop-sidebar" class="sidebar-inner col-inner">
@@ -207,6 +215,7 @@ if (is_product_category() && $q->parent) {
 						do_action('woocommerce_shop_loop');
 
 						wc_get_template_part('content', 'product');
+
 					}
 				}
 

@@ -27,7 +27,7 @@ function add_desc_after_title() {
 }
 
 // Add size chart info
-add_action('woocommerce_after_single_product_summary', 'add_size_chart_acf', 6);
+add_action('woocommerce_after_add_to_cart_form', 'add_size_chart_acf', 6);
 function add_size_chart_acf() {
     global $product;
 
@@ -38,4 +38,8 @@ function add_size_chart_acf() {
         echo '<div class="size-chart-img"><img src="' . esc_url($url) . '" alt="Size Chart"></div>';
     }
 }
+
+add_action ('woocommerce_before_single_product', function () {
+    echo '<h2 class="single-product-title">Shop</h2>';
+});
 
