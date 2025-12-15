@@ -4,17 +4,96 @@
 }
 
 // shop page
-.shop-page-title {
-  margin-top: 40px;
+.archive {
+  .lesson-shop-title {
+    padding: 0 15px;
+    padding-top: 60px;
+  }
+  #lesson-shop-wrapper {
+    padding: 0px 15px 60px 15px;
+  }
+
+  .shop-page-title {
+    margin-top: 40px;
+    display: none;
+  }
+  .category-page-row {
+    padding-top: 0;
+    .booklist-title {
+      margin-bottom: 20px !important;
+    }
+    #shop-sidebar {
+      .filter-title {
+        color: $primary-color;
+        font-weight: 700;
+      }
+      a {
+        font-weight: 500;
+        color: #000 !important;
+      }
+    }
+  }
+  .products {
+    .product {
+      padding: 18px;
+      .col-inner {
+        text-align: center;
+        .add_to_cart_button {
+          color: #fff !important;
+          background-color: $primary-color !important;
+          width: 100%;
+          border-radius: 30px;
+          text-transform: capitalize;
+        }
+      }
+      .product-small.box {
+        .title-wrapper {
+          .product-title {
+            a {
+              font-weight: 500;
+              color: #000 !important;
+            }
+          }
+        }
+        .price-wrapper {
+          display: none !important;
+        }
+        img {
+          border-radius: 24px;
+        }
+      }
+    }
+  }
+  @include tablet {
+    #lesson-shop-wrapper {
+      padding: 20px 15px 60px 15px;
+    }
+    .category-page-row {
+      padding-top: 30px;
+      .booklist-title {
+        margin-bottom: 40px !important;
+      }
+    }
+  }
 }
 
 // single product
 .single-product {
+  .breadcrumbs {
+    display: none;
+  }
+  .single-product-title {
+    padding-top: 60px;
+  }
   .product-main {
     padding-bottom: 0;
-  }
-  .product-info.summary {
-    padding-bottom: 0;
+    .product-info {
+      padding: 20px;
+      margin-bottom: 40px;
+      border-radius: 0;
+      background-color: $text-bg-1;
+      margin-inline: 15px;
+    }
   }
   .product-footer {
     .size-chart-img {
@@ -22,20 +101,16 @@
     }
   }
   @include tablet {
+    .product-main {
+      .product-info {
+        padding: 40px;
+        border-radius: 36px;
+      }
+    }
     .product-footer {
       .size-chart-img {
         padding: 40px 0;
       }
     }
-  }
-}
-
-.archive {
-  .lesson-shop-title {
-    padding: 0 15px;
-    padding-top: 60px;
-  }
-  #lesson-shop-wrapper {
-      padding: 20px 15px 60px 15px;
   }
 }
