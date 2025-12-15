@@ -10,7 +10,10 @@
     .widget_media_image {
       text-align: center;
       img {
-        max-width: 70% !important;
+        height: 135px !important;
+        width: auto;
+        object-fit: contain;
+        margin-bottom: 20px;
       }
     }
     .widget {

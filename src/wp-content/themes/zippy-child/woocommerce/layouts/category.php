@@ -47,56 +47,58 @@ if (is_product_category() && $q->parent) {
 			<div id="lesson-shop-wrapper">
 				<h2 class="booklist-title text-center mb-lg-2 mb-1"><?php echo esc_html($level_slug->name); ?></h2>
 
-				<table class="booklist-table">
-					<thead>
-						<tr>
-							<th>Subject</th>
-							<th>Title of Books</th>
-							<th>Publisher</th>
-							<th>Price ($)</th>
-							<th>Quantity</th>
-						</tr>
-					</thead>
-					<tbody>
-
-						<?php if ($products->have_posts()) : ?>
-							<?php while ($products->have_posts()) : $products->the_post();
-								$product = wc_get_product(get_the_ID());
-							?>
-								<tr>
-									<td><?php echo esc_html(get_the_terms(get_the_ID(), 'product_tag')[0]->name);?></td>
-									<td><?php the_title(); ?></td>
-									<td><?php echo esc_html(get_the_author()); ?></td>
-									<td><?php echo wc_price($product->get_price()); ?></td>
-
-									<td class="quantity">
-										<div class="custom-qty-wrapper">
-											<button type="button" class="custom-minus">-</button>
-
-											<input
-												type="number"
-												name="qty_<?php echo $product->get_id(); ?>"
-												class="custom-qty"
-												value="0"
-												min="0"
-												max="<?php echo $product->get_max_purchase_quantity(); ?>"
-												step="1" />
-
-											<button type="button" class="custom-plus">+</button>
-										</div>
-									</td>
-
-								</tr>
-
-							<?php endwhile; ?>
-						<?php else : ?>
+				<div class="booklist-scroll">
+					<table class="booklist-table">
+						<thead>
 							<tr>
-								<td colspan="4">No products found for this level.</td>
+								<th>Subject</th>
+								<th>Title of Books</th>
+								<th>Publisher</th>
+								<th>Price ($)</th>
+								<th>Quantity</th>
 							</tr>
-						<?php endif; ?>
+						</thead>
+						<tbody>
 
-					</tbody>
-				</table>
+							<?php if ($products->have_posts()) : ?>
+								<?php while ($products->have_posts()) : $products->the_post();
+									$product = wc_get_product(get_the_ID());
+								?>
+									<tr>
+										<td><?php echo esc_html(get_the_terms(get_the_ID(), 'product_tag')[0]->name);?></td>
+										<td><?php the_title(); ?></td>
+										<td><?php echo esc_html(get_the_author()); ?></td>
+										<td><?php echo wc_price($product->get_price()); ?></td>
+
+										<td class="quantity">
+											<div class="custom-qty-wrapper">
+												<button type="button" class="custom-minus">-</button>
+
+												<input
+													type="number"
+													name="qty_<?php echo $product->get_id(); ?>"
+													class="custom-qty"
+													value="0"
+													min="0"
+													max="<?php echo $product->get_max_purchase_quantity(); ?>"
+													step="1" />
+
+												<button type="button" class="custom-plus">+</button>
+											</div>
+										</td>
+
+									</tr>
+
+								<?php endwhile; ?>
+							<?php else : ?>
+								<tr>
+									<td colspan="4">No products found for this level.</td>
+								</tr>
+							<?php endif; ?>
+
+						</tbody>
+					</table>
+				</div>
 				<div class="add-all-btn-wrapper">
 					<button id="add-selected-to-cart" class="add-all-btn">Add Selected to Cart</button>
 				</div>
