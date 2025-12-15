@@ -2,16 +2,16 @@
 
 .page {
   .checkout-page-title {
-    .page-title-inner {
-      padding-top: 40px;
-    }
+    display: none;
+  }
+  .checkout-title {
+    margin: 20px 0; 
   }
   .checkout-breadcrumbs a {
     text-transform: capitalize !important;
   }
   .page-checkout {
-    padding-bottom: 60px;
-    padding-top: 40px;
+    padding: 60px 0;
     h3,
     .button {
       text-transform: capitalize !important;
@@ -27,6 +27,11 @@
         }
       }
     }
+  }
+  @include tablet {
+    .checkout-title {
+    margin-top: 40px 0;
+  }
   }
 }
 

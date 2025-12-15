@@ -32,7 +32,8 @@ jQuery(document).ready(function ($) {
       },
       success: function (response) {
         if (response.success) {
-          alert("Added to cart!");
+          // alert("Added to cart!");
+          location.reload();
         } else {
           alert("Error adding products.");
         }
