@@ -1,11 +1,11 @@
 <?php
 add_action('wp_footer', function () {
-    if (!is_user_logged_in()) {
+    if (!is_user_logged_in() && !is_account_page()) {
         echo do_shortcode('[lightbox id="custom-login-form-popup" auto_open="true" auto_timer="5000" auto_show="always" width="500px"][block id="login-popup"][/lightbox]');
     }
 });
 add_filter('body_class', function ($classes) {
-    if (!is_user_logged_in()) {
+    if (!is_user_logged_in() && !is_account_page()) {
         $classes[] = 'logged-out';
     }
     return $classes;

@@ -16,8 +16,7 @@ function lesson_shop_shortcode()
     if (!$level_slug) {
         if ($level_term) {
             $level_slug = $level_term->slug;
-        }
-        else {
+        } else {
             return '<p>No level assigned. Please contact administrator.</p>';
         }
     }
@@ -49,6 +48,7 @@ function lesson_shop_shortcode()
         <table class="booklist-table">
             <thead>
                 <tr>
+                    <th>Subject</th>
                     <th>Title of Books</th>
                     <th>Publisher</th>
                     <th>Price ($)</th>
@@ -62,6 +62,7 @@ function lesson_shop_shortcode()
                         $product = wc_get_product(get_the_ID());
                     ?>
                         <tr>
+                            <td><?php echo esc_html(get_the_terms(get_the_ID(), 'product_cat')[0]->name);?></td>
                             <td><?php the_title(); ?></td>
                             <td><?php echo esc_html(get_the_author()); ?></td>
                             <td><?php echo wc_price($product->get_price()); ?></td>
@@ -94,9 +95,9 @@ function lesson_shop_shortcode()
 
             </tbody>
         </table>
-       <div class="add-all-btn-wrapper">
-        <button id="add-selected-to-cart" class="add-all-btn">Add Selected to Cart</button>
-       </div>
+        <div class="add-all-btn-wrapper">
+            <button id="add-selected-to-cart" class="add-all-btn">Add Selected to Cart</button>
+        </div>
 
     </div>
 

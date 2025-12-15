@@ -12,13 +12,16 @@
       tr {
         background-color: $text-bg-1;
         border-bottom: 5px solid #fff;
-      }
+        td {
+          font-size: 14px;
+        }
+      } 
     }
 
     th,
     td {
-      padding: 20px 10px !important;
-      text-align: left;
+      padding: 20px 5px !important;
+      text-align: center;
       vertical-align: middle;
       border: 0 !important;
       color: #000;
@@ -53,6 +56,8 @@
       th,
       td {
         padding: 20px 25px !important;
+        font-size: 16px !important;
+        text-align: left;
       }
     }
   }
@@ -102,8 +107,7 @@
 .custom-qty-wrapper {
   display: flex;
   align-items: center;
-
-  gap: 8px;
+  gap: 2px;
   .custom-minus {
     margin-bottom: 0px;
     cursor: pointer;
@@ -129,5 +133,8 @@
   .custom-qty {
     height: 40px;
     text-align: center;
+  }
+  @include tablet {
+    gap: 10px;
   }
 }

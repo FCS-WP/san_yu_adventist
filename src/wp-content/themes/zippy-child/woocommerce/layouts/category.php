@@ -50,6 +50,7 @@ if (is_product_category() && $q->parent) {
 				<table class="booklist-table">
 					<thead>
 						<tr>
+							<th>Subject</th>
 							<th>Title of Books</th>
 							<th>Publisher</th>
 							<th>Price ($)</th>
@@ -63,6 +64,7 @@ if (is_product_category() && $q->parent) {
 								$product = wc_get_product(get_the_ID());
 							?>
 								<tr>
+									<td><?php echo esc_html(get_the_terms(get_the_ID(), 'product_cat')[0]->name);?></td>
 									<td><?php the_title(); ?></td>
 									<td><?php echo esc_html(get_the_author()); ?></td>
 									<td><?php echo wc_price($product->get_price()); ?></td>
