@@ -1,4 +1,11 @@
+@import "../variables";
+
 .page {
+  .checkout-page-title {
+    .page-title-inner {
+      padding-top: 40px;
+    }
+  }
   .checkout-breadcrumbs a {
     text-transform: capitalize !important;
   }
@@ -19,6 +26,35 @@
           text-shadow: none;
         }
       }
+    }
+  }
+}
+
+// mini cart
+#cart-popup {
+  .cart-popup-title {
+    .heading-font {
+      font-family: $main-font;
+    }
+  }
+  .widget_shopping_cart {
+    .cart_list {
+      .remove_from_cart_button {
+        color: $primary-color;
+      }
+      a {
+        font-family: $second-font;
+      }
+    }
+  }
+}
+.widget_shopping_cart {
+  .woocommerce-mini-cart__buttons {
+    .button {
+      background-color: $primary-color;
+    }
+    .checkout {
+      background-color: $secondary-color;
     }
   }
 }

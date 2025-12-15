@@ -16,8 +16,7 @@ function lesson_shop_shortcode()
     if (!$level_slug) {
         if ($level_term) {
             $level_slug = $level_term->slug;
-        }
-        else {
+        } else {
             return '<p>No level assigned. Please contact administrator.</p>';
         }
     }
@@ -44,11 +43,12 @@ function lesson_shop_shortcode()
 
     <div id="lesson-shop-wrapper">
 
-        <h2 class="booklist-title text-center mb-lg-2 mb-1"><?php echo esc_html($level_slug->name); ?> Booklist</h2>
+        <h2 class="booklist-title text-center mb-lg-2 mb-1"><?php echo esc_html(get_term_by('slug', $level_slug, 'product_cat')->name); ?> Booklist</h2>
 
         <table class="booklist-table">
             <thead>
                 <tr>
+                    <th>Subject</th>
                     <th>Title of Books</th>
                     <th>Publisher</th>
                     <th>Price ($)</th>
@@ -62,6 +62,7 @@ function lesson_shop_shortcode()
                         $product = wc_get_product(get_the_ID());
                     ?>
                         <tr>
+                            <td><?php echo esc_html(get_the_terms(get_the_ID(), 'product_cat')[0]->name);?></td>
                             <td><?php the_title(); ?></td>
                             <td><?php echo esc_html(get_the_author()); ?></td>
                             <td><?php echo wc_price($product->get_price()); ?></td>
@@ -94,9 +95,9 @@ function lesson_shop_shortcode()
 
             </tbody>
         </table>
-       <div class="add-all-btn-wrapper">
-        <button id="add-selected-to-cart" class="add-all-btn">Add Selected to Cart</button>
-       </div>
+        <div class="add-all-btn-wrapper">
+            <button id="add-selected-to-cart" class="add-all-btn">Add Selected to Cart</button>
+        </div>
 
     </div>
 

@@ -25,6 +25,12 @@
       font-size: 24px;
       color: $primary-color;
     }
+
+    .menu-item-type-custom {
+      a {
+        font-size: 14px;
+      }
+    }
   }
 
   &.stuck {
@@ -41,6 +47,12 @@
         color: #000;
         font-weight: 500 !important;
       }
+    }
+  }
+  &.stuck {
+    background-color: #000;
+    .header-main .nav > li > a {
+      line-height: 30px;
     }
   }
 }
