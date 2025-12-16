@@ -31,6 +31,18 @@ jQuery(document).ready(function ($) {
   });
 
   // Login button action
-
   $("a.nav-top-not-logged-in").attr("data-open", "#custom-login-form-popup");
+
+  // Auto show login popup 1 time
+  $(document).ready(function () {
+    if (!sessionStorage.getItem('login_popup_shown')) {
+      setTimeout(function () {
+        const btn = document.querySelector('[data-open="#custom-login-form-popup"]');
+        if (btn) {
+            btn.click();
+            sessionStorage.setItem('login_popup_shown', '1');
+        }
+      }, 5000);
+    }
+  })
 });
