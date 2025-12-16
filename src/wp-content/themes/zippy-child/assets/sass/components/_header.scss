@@ -43,6 +43,19 @@
         }
       }
     }
+    .account-item {
+      .account-link {
+        font-weight: 500 !important;
+        color: #000;
+      }
+      ul.nav-dropdown {
+        li {
+          a {
+            color: #000;
+          }
+        }
+      }
+    }
   }
 
   .nav-right {
