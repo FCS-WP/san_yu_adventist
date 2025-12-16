@@ -1,3 +1,45 @@
-.my-account-header {
+#main {
+  .my-account-header {
     margin-top: 40px;
+    background-color: unset;
+    border: 0;
+    small {
+      display: none;
+    }
+  }
+  .my-account {
+    .row {
+      padding: 40px 0;
+      .user-name {
+        color: #000;
+        font-weight: 500;
+      }
+    }
+    .large-9 {
+      padding: 0px 30px 30px;
+      .woocommerce-message {
+        &:focus {
+          outline: none;
+        }
+      }
+      .woocommerce-message {
+        padding-bottom: 20px;
+      }
+      p,
+      ul {
+        margin-bottom: 20px;
+      }
+      .dashboard-links {
+        li {
+          a {
+            font-size: 16px;
+            &:hover {
+              background-color: $primary-color;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
 }
