@@ -33,7 +33,7 @@ if ( ! function_exists( 'flatsome_woocommerce_add_notice' ) ) {
 		}
 	}
 }
-add_action( 'flatsome_after_header', 'flatsome_woocommerce_add_notice', 100 );
+// add_action( 'flatsome_after_header', 'flatsome_woocommerce_add_notice', 100 );
 
 function flatsome_my_account_menu_classes($classes){
 
