@@ -67,24 +67,26 @@ if (is_product_category() && $q->parent) {
 									<tr>
 										<td><?php echo esc_html(get_the_terms(get_the_ID(), 'product_tag')[0]->name);?></td>
 										<td><?php the_title(); ?></td>
-										<td><?php echo esc_html(get_the_author()); ?></td>
-										<td><?php echo wc_price($product->get_price()); ?></td>
+										<td><?php echo esc_html(get_the_excerpt()); ?></td>
+										<td><?php echo ($product->get_price() > 0) ? wc_price($product->get_price()) : 'NFY'; ?></td>
 
 										<td class="quantity">
-											<div class="custom-qty-wrapper">
-												<button type="button" class="custom-minus">-</button>
+											<?php if ($product->get_price() > 0) {?>
+												<div class="custom-qty-wrapper">
+													<button type="button" class="custom-minus">-</button>
 
-												<input
-													type="number"
-													name="qty_<?php echo $product->get_id(); ?>"
-													class="custom-qty"
-													value="0"
-													min="0"
-													max="<?php echo $product->get_max_purchase_quantity(); ?>"
-													step="1" />
+													<input
+														type="number"
+														name="qty_<?php echo $product->get_id(); ?>"
+														class="custom-qty"
+														value="0"
+														min="0"
+														max="<?php echo $product->get_max_purchase_quantity(); ?>"
+														step="1" />
 
-												<button type="button" class="custom-plus">+</button>
-											</div>
+													<button type="button" class="custom-plus">+</button>
+												</div>
+											<?php } else { echo '<div class="nfy">NFY</div>'; }?>
 										</td>
 
 									</tr>

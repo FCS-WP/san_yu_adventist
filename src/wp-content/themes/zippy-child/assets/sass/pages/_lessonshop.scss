@@ -50,6 +50,9 @@
       &.quantity {
         width: 100%;
         display: table-cell;
+        .nfy {
+          margin-top: 20px;
+        }
       }
     }
   }
