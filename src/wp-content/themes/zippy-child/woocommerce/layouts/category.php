@@ -70,8 +70,8 @@ if (is_product_category() && $q->parent) {
 										<td><?php echo esc_html(get_the_excerpt()); ?></td>
 										<td><?php echo ($product->get_price() > 0) ? wc_price($product->get_price()) : 'NFY'; ?></td>
 
-										<td class="quantity">
-											<?php if ($product->get_price() > 0) {?>
+										<?php if ($product->get_price() > 0) {?>
+											<td class="quantity">
 												<div class="custom-qty-wrapper">
 													<button type="button" class="custom-minus">-</button>
 
@@ -86,8 +86,8 @@ if (is_product_category() && $q->parent) {
 
 													<button type="button" class="custom-plus">+</button>
 												</div>
-											<?php } else { echo '<div class="nfy">NFY</div>'; }?>
-										</td>
+											</td>
+										<?php } else { echo '<td>NFY</td>'; }?>
 
 									</tr>
 
