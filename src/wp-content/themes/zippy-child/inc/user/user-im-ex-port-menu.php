@@ -65,9 +65,8 @@ function render_import_users_page(){
             <input type="hidden" name="action" value="import_users_csv">
             <?php wp_nonce_field('import_users_csv'); ?>
 
-            <input type="file" name="csv_file" accept=".csv" required>
-            <br><br>
-            <button class="button button-primary">Import CSV</button>
+            <div style="width: 100%;"><input type="file" name="csv_file" accept=".csv" required></div>
+            <button class="button button-primary" style="margin-top: 10px;">Import CSV</button>
         </form>
     </div>
     <?php
