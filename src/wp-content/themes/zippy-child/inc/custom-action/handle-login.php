@@ -1,4 +1,13 @@
 <?php
+// Login is required
+add_action('template_redirect', function () {
+    if (!is_user_logged_in() && !is_page(['login', 'my-account']) && !is_admin() && !wp_doing_ajax()) {
+        wp_redirect("/my-account");
+        exit;
+    }
+});
+
+
 // AJAX HANDLE LOGIN
 add_action('wp_ajax_student_login', 'handle_student_login');
 add_action('wp_ajax_nopriv_student_login', 'handle_student_login');

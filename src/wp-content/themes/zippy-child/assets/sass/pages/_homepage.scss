@@ -12,7 +12,7 @@
         rgba(255, 255, 255, 0.4) 45%,
         rgba(255, 255, 255, 0.1) 55%,
         rgba(255, 255, 255, 0) 100%
-      )
+      );
     }
     img {
       z-index: 1;
@@ -20,27 +20,58 @@
   }
   .banner-layers {
     .text {
-        p {
-            text-shadow: 0.5px 0.5px 5px #7a7a7a;
-            font-weight: 600 !important;
-        }
+      p {
+        text-shadow: 0.5px 0.5px 5px #7a7a7a;
+        font-weight: 600 !important;
+      }
     }
   }
 }
 
 .product-cat-list {
-    .product-category {
-        .box-text {
-            h5 {
-                text-transform: capitalize;
-                text-shadow: 1.5px 1.5px 5px #070707;
-                font-size: 16px;
-            }
-            @include tablet {
-                h5 {
-                    font-size: 18px ;
-                }
-            }
+  .product-category {
+    .box-text {
+      h5 {
+        text-transform: capitalize;
+        text-shadow: 1.5px 1.5px 5px #070707;
+        font-size: 16px;
+      }
+      @include tablet {
+        h5 {
+          font-size: 18px;
         }
+      }
     }
+  }
+}
+
+// tab menu
+.category-tab {
+  .nav {
+    .tab {
+      margin: 0 20px !important;
+      font-size: 14px;
+      &.active {
+        border-bottom: $primary-color 2px solid !important;
+      }
+    }
+  }
+
+  .tab-panels {
+    margin-top: 10px;
+  }
+
+  @include tablet {
+    .nav {
+      .tab {
+        margin: 0 20px !important;
+        a {
+          font-size: 20px !important;
+        }
+      }
+    }
+    .tab-panels {
+      margin-top: 20px;
+    }
+  }
 }

@@ -50,6 +50,7 @@
       &.quantity {
         width: 100%;
         display: table-cell;
+        vertical-align: middle;
       }
     }
   }
@@ -114,6 +115,7 @@
 .custom-qty-wrapper {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 2px;
   .custom-minus {
     margin-bottom: 0px;
