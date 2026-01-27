@@ -49,7 +49,7 @@ function render_import_users_page(){
         <?php if (!empty($_GET['error'])) : ?>
             <div class="notice notice-error">
                 <p>
-                    <strong>Duplicate Student IDs (not imported):</strong><br>
+                    <strong>There was an error while importing. Plese check again Student IDs and Emails</strong><br>
                     <?php echo esc_html($_GET['error']); ?>
                 </p>
             </div>
@@ -60,9 +60,9 @@ function render_import_users_page(){
                 <p>Import completed successfully.</p>
             </div>
         <?php endif; ?>
-
         <form method="post" enctype="multipart/form-data" action="<?php echo admin_url('admin-post.php'); ?>">
             <input type="hidden" name="action" value="import_users_csv">
+            <p style="font-size: 16px;"><strong>Warning:</strong><i> ID, Student ID, and Email must be unique. Leave the ID value empty when creating new users.</i></p>
             <?php wp_nonce_field('import_users_csv'); ?>
 
             <div style="width: 100%;"><input type="file" name="csv_file" accept=".csv" required></div>
